@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import GuestList from '../GuestList/GuestList';
 import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
 import GuestForm from '../GuestForm/GuestForm';
+import PartyLeader from '../PartyLeader/PartyLeader';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
@@ -58,8 +59,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h2>Party Leader</h2>
-      {guestList[0] && <h3>{guestList[0].name}</h3>}
+      {/* <h2>Party Leader</h2>
+      {guestList[0] && <h3>{guestList[0].name}</h3>} */}
+      <PartyLeader guestList={guestList} />
       <GuestForm
         newGuestName={newGuestName}
         setNewGuestName={setNewGuestName}
