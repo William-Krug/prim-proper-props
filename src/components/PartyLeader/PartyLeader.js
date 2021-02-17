@@ -1,8 +1,9 @@
-function PartyLeader({ guestList }) {
+function PartyLeader({ leader }) {
+  console.log('leader:', leader);
   return (
     <>
       <h2>Party Leader</h2>
-      {guestList[0] && <h3>{guestList[0].name}</h3>}
+      <h3>{leader.name}</h3>
     </>
   );
 }
