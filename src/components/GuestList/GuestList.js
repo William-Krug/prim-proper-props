@@ -1,6 +1,8 @@
+import Guest from '../Guest/Guest';
+
 function GuestList({ guestList, onDelete }) {
   return (
-    <>
+    <div>
       <h2>Guest List</h2>
       <table>
         <thead>
@@ -11,18 +13,26 @@ function GuestList({ guestList, onDelete }) {
           </tr>
         </thead>
         <tbody>
-          {guestList.map((guest) => (
-            <tr key={guest.id}>
-              <td>{guest.name}</td>
-              <td>{String(guest.kidsMeal)}</td>
-              <td>
-                <button onClick={() => onDelete(guest.id)}>Remove Guest</button>
-              </td>
-            </tr>
-          ))}
+          {guestList.map((guest) => {
+            return (
+              <Guest
+                key={guest.id}
+                guest={guest.name}
+                kidsMeal={String(guest.kidsMeal)}
+                onDelete={onDelete}
+              />
+            );
+            // <tr key={guest.id}>
+            //   <td>{guest.name}</td>
+            //   <td>{String(guest.kidsMeal)}</td>
+            //   <td>
+            //     <button onClick={() => onDelete(guest.id)}>Remove Guest</button>
+            //   </td>
+            // </tr>
+          })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
 
