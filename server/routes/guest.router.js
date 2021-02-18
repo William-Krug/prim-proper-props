@@ -38,9 +38,11 @@ router.post('/', (req, res) => {
     });
 });
 
+// Setup a DELETE route to remove a guest from the database
 router.delete('/:id', (req, res) => {
   const deleteID = req.params.id;
 
+  // Sanitize inputs to database
   const sqlScript = `
     DELETE from "guests"
     WHERE "id" = $1;`;

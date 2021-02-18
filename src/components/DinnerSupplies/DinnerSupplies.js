@@ -1,7 +1,7 @@
 import SilverWare from '../SilverWare/SilverWare';
 
 function DinnerSupplies({ guestList }) {
-  const count = guestList.length;
+  const count = guestList.length * 2;
   return (
     <>
       <h2>Dinner Supplies</h2>
