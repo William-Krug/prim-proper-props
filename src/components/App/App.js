@@ -55,6 +55,22 @@ function App() {
     }
   };
 
+  const deleteGuest = (guestID) => {
+    console.log('ready to delete guest id:', guestID);
+    axios({
+      method: 'DELETE',
+      url: `/guests/${guestID}`,
+    })
+      .then((response) => {
+        console.log('Guest Deleted');
+        getGuests();
+      })
+      .catch((error) => {
+        console.log('*** ERROR with DELETE request', error);
+        alert('Error Removing Guest');
+      });
+  };
+
   console.log(newGuestMeal);
   return (
     <div className="App">
@@ -69,7 +85,7 @@ function App() {
         setNewGuestMeal={setNewGuestMeal}
         handleSubmit={handleSubmit}
       />
-      <GuestList guestList={guestList} />
+      <GuestList guestList={guestList} onDelete={deleteGuest} />
       <DinnerSupplies guestList={guestList} />
       <Footer />
     </div>

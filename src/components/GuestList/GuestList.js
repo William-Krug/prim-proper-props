@@ -1,4 +1,4 @@
-function GuestList({ guestList }) {
+function GuestList({ guestList, onDelete }) {
   return (
     <>
       <h2>Guest List</h2>
@@ -7,6 +7,7 @@ function GuestList({ guestList }) {
           <tr>
             <th>Name</th>
             <th>Kid's Meal</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -14,6 +15,9 @@ function GuestList({ guestList }) {
             <tr key={guest.id}>
               <td>{guest.name}</td>
               <td>{String(guest.kidsMeal)}</td>
+              <td>
+                <button onClick={() => onDelete(guest.id)}>Remove Guest</button>
+              </td>
             </tr>
           ))}
         </tbody>
