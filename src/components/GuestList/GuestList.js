@@ -7,7 +7,7 @@ function GuestList({ guestList }) {
           <tr>
             <th>Name</th>
             <th>Kid's Meal</th>
-            <th>Remove Guest</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
