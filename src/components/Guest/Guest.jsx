@@ -1,10 +1,11 @@
-function Guest({ guest, kidsMeal, onDelete }) {
+function Guest({ id, guest, kidsMeal, onDelete }) {
+  console.log('guest.id:', guest.id);
   return (
     <tr>
       <td>{guest}</td>
       <td>{kidsMeal}</td>
       <td>
-        <button onClick={() => onDelete(guest.id)}>Remove Guest</button>
+        <button onClick={() => onDelete(id)}>Remove Guest</button>
       </td>
     </tr>
   );
