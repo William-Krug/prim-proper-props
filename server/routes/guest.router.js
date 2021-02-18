@@ -46,7 +46,7 @@ router.delete('/:id', (req, res) => {
     WHERE "id" = $1;`;
 
   pool
-    .query(sqlScript, [guestID])
+    .query(sqlScript, [deleteID])
     .then((dbResponse) => {
       console.log('Guest Deleted');
       res.sendStatus(200);
