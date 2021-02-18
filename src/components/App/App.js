@@ -7,7 +7,6 @@ import GuestList from '../GuestList/GuestList';
 import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
 import GuestForm from '../GuestForm/GuestForm';
 import PartyLeader from '../PartyLeader/PartyLeader';
-// import SilverWare from '../SilverWare/SilverWare';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
