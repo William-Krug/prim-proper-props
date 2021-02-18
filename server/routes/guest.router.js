@@ -38,6 +38,23 @@ router.post('/', (req, res) => {
     });
 });
 
-router.delete('/:id');
+router.delete('/:id', (req, res) => {
+  const deleteID = req.params.id;
+
+  const sqlScript = `
+    DELETE from "guests"
+    WHERE "id" = $1;`;
+
+  pool
+    .query(sqlScript, [guestID])
+    .then((dbResponse) => {
+      console.log('Guest Deleted');
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(`*** ERROR making database DELETE query ${sqlScript}`, error);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;
