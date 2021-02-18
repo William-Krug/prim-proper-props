@@ -55,6 +55,7 @@ function App() {
     }
   };
 
+  // Remove guest from the database (and DOM)
   const deleteGuest = (guestID) => {
     console.log('ready to delete guest id:', guestID);
     axios({
